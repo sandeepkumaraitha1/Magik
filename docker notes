@@ -1,0 +1,95 @@
+docker and kubernetes
+
+
+aws login :
+sandeep.aitha001@gmail.com
+Anpasa@939
+###################
+instance 
+ 
+
+ssh -i "mynewkeypair.pem" ec2-user@ec2-13-61-15-161.eu-north-1.compute.amazonaws.com
+
+#####
+
+waterdeep@9391218183
+sandeepkumaraitha
+
+####
+
+
+docker file ----> docker image --> run the image ---> create container 
+
+############
+
+
+sudo su -
+sudo dnf update -y
+sudo dnf install -y dnf-utils
+sudo subscription-manager register --username sandeepkumaraitha --password waterdeep@9391218183
+systemctl start docker
+usermod -aG docker ec2-user
+docker ps
+docker images
+docker pull ngnix
+
+docker check the image in the local first and if not available go to docker central  repositer and pulls the image
+name version and 
+docker ps --return running containers
+docker ps a--- return all containers
+
+docker create <imagename> ---create container 
+docker start fef0e5d0678c
+
+how can you access the docker contianer from inernet
+by enable the ports
+docker run -d -p 8000:80 nginx
+docker run -d -p 80:80 nginx
+docker inspect containerid
+docker inspect image
+docker stop $(docker ps -q)--- remove allcontainers
+
+###############
+
+docker file --->keep all the instruction in a file an dbuild the image --- declarative 
+
+###########
+run docker file where docker file available 
+docker build -t url/username/tag/image_name:tag .
+
+docker build -t run:1.0 .
+
+run vs cmd 
+
+cmd
+
+systemctl will not work in containers
+
+
+docker rm -f docker ps -a -q to kill all contianers
+docker rmi -f docker images -a -q to kill all contianers
+
+docker images -f lable=course=devops---- used to filter
+
+docker expose ---- use to give information of port
+docker exec -it containerid bash---- to go to container 
+
+
+#########
+create  a docker file 
+ build the image 
+ docker build -t run:1.0 .
+ runt the image to create container
+docker run -d -p 8000:80 <imagename>
+ 
+######################
+Entry  point and cmd 
+cmd can be over ridden 
+entry point can not be overriddem 
+ you can use both as combine
+ cat /etc/*release
+
+copy vs add 
+
+###########
+
